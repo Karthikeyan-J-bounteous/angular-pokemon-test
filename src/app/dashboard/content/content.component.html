@@ -1,0 +1,24 @@
+<div class="containers">
+    <div class="card-container row justify-content-around">
+        <div class="cards col-lg-3 col-md-4 col-sm-6" *ngFor="let pokemon of this.pokemonRange">
+            <app-cards class="app-cards" [name]="this.pokemon?.name"></app-cards>
+        </div>
+    </div>
+</div>
+
+
+<div class="card_nav">
+    <div class="d-flex flex-row nav justify-content-around justify-content-lg-end align-items-center">
+        <div class="page-container mx-3 text-dark">
+            {{this.range[0]+1}} - {{this.pokemonList.length <= this.range[0]+21? this.pokemonList.length : this.range[0]+20}} ... {{this.pokemonList.length}}
+        </div>
+        <div class="button-container">
+            <button class="btn btn-primary nav-button" [disabled]="leftDisable" (click)="selectPrevious()">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button class="btn btn-primary nav-button" [disabled]="rightDisable" (click)="selectNext()">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

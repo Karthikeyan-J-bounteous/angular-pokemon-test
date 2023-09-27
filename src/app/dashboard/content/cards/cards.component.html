@@ -1,0 +1,20 @@
+
+<div class="d-flex align-items-center card text-center" (click)="onClickCard(this.pokemon?.name)" style="width: 100%; height: 100%;">
+    <h4>#{{this.pokemon?.id}}</h4>
+    <img class="card-img-top img-fluid card__img" [src]="this.pokemon?.sprites.other.home.front_default || this.pokemon?.sprites.other['official-artwork'].front_default" alt="Card image cap" [alt]="this.pokemon?.name">
+    <div class="card-body">
+      <h3 class="card-title">{{this.pokemon?.name | capitalize}}</h3>
+      <div class="card__exp">
+        <p class="card-text">Base Experince: {{this.pokemon?.base_experience}} xp
+        </p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar"
+          aria-valuemin="0" aria-valuemax="100" [style]="this.exp">
+          </div>
+        </div>
+      </div>
+      <div class="d-flex card__type justify-content-around" *ngIf="this.pokemon">
+        <button *ngFor="let types of this.pokemon.types; let i = index" [ngClass]="loadClass(types.type.name)" class="card__type__button btn btn-primary">{{types.type.name | capitalize}}</button>
+      </div>
+    </div>
+  </div>

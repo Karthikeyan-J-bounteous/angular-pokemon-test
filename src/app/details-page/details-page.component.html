@@ -1,0 +1,129 @@
+<div class="details">
+    <div class="details__nav d-flex align-items-center justify-content-center" d-flex align-items-center justify-content-center>
+        <img class="details__nav__logo" src="../../assets/pokemon-logo.png" alt="pokemon logo" (click)="redirect()">
+    </div>
+
+    <div class="row">
+        <div class="details__container col-sm-12 col-lg-5 col-md-5 mt-4">
+                <div class="col">
+                    <div class="row d-flex justify-content-center">
+                        <h2 class="text-center">#{{this.pokemon?.id}}</h2>
+                        <img class="details__container__image" [src]="this.pokemon?.sprites.other.dream_world.front_default || this.pokemon?.sprites.other['official-artwork'].front_default" />
+                    </div>
+                    <div class="row d-block d-md-none">
+                        <div class="row justify-content-center">
+                            <h1 class="text-center details__container__header">{{this.pokemon?.name | capitalize }}</h1>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row  mt-4">
+                        <h2 class="text-center"><u>Type</u></h2>
+                            <div class="d-flex justify-content-center" *ngIf="this.pokemon">
+                                <button *ngFor="let types of this.pokemon.types; let i = index" [ngClass]="loadClass(types.type.name)" class="details__container__button btn btn-primary">{{types.type.name | capitalize}}</button>
+                              </div>
+                    </div>
+
+                    <div class="row  mt-4 mb-4">
+                        <h2 class="text-center"><u>Abilities</u></h2>
+                            <div class="d-flex justify-content-center" *ngIf="this.pokemon">
+                                <button *ngFor="let abilities of this.pokemon.abilities; let i = index" class="details__container__button btn btn-primary">{{abilities.ability.name | capitalize}}</button>
+                              </div>
+                    </div>
+                </div>   
+        </div>
+        <div class="details__container col-sm-12 col-lg-7 col-md-7">
+            <div class="col">
+                <div class="row justify-content-center d-none d-md-block">
+                    <h1 class="text-center details__container__header">{{this.pokemon?.name | capitalize }}</h1>
+                    <hr>
+                </div>
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Height:  {{this.pokemon?.height/10}} m</h3>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                    <h3 class="text-center">Weight:  {{this.pokemon?.weight/10}} kg</h3>
+                </div>
+                <div class="row mt-3 justify-content-center">
+
+                    <div class="card details__container__stats">
+                        <h1 class="text-center" style="color:antiquewhite"><u>Stats</u></h1>
+                        <div class="details__container__stats__base d-flex flex-row align-items-center">
+                            <h3 class="details__container__stats__base" style="width: 185px">Base: </h3>
+                            <div class="progress details__container__stats__base__progress">
+                                <div class="details__container__stats__base__progress__bar" [style]="this.loadexp(this.pokemon?.base_experience, true)">
+                                </div>
+                              </div>
+                            <h3 class="details__container__stats__base" style="width: 155px">{{this.pokemon?.base_experience}} xp</h3>
+                        </div>
+
+                        <div class="details__container__stats__health d-flex flex-row align-items-center">
+                            <h3 class="details__container__stats__health" style="width: 185px">Health: </h3>
+                            <div class="progress details__container__stats__health__progress">
+                                <div class="details__container__stats__health__progress__bar" [style]="this.loadexp(this.pokemon?.stats[0].base_stat)">
+                                </div>
+                              </div>
+                            <h3 class="details__container__stats__health" style="width: 155px">{{this.pokemon?.stats[0].base_stat}} pt</h3>
+                        </div>
+                        
+                        <div class="details__container__stats__attack d-flex flex-row align-items-center">
+                            <h3 class="details__container__stats__attack" style="width: 185px">Atk: </h3>
+                            <div class="progress details__container__stats__attack__progress">
+                                <div class="details__container__stats__attack__progress__bar" [style]="this.loadexp(this.pokemon?.stats[1].base_stat)">
+                                </div>
+                              </div>
+                            <h3 class="details__container__stats__attack" style="width: 155px">{{this.pokemon?.stats[1].base_stat}} pt</h3>
+                        </div>
+
+                        <div class="details__container__stats__defense d-flex flex-row align-items-center">
+                            <h3 class="details__container__stats__defense" style="width: 185px">Def: </h3>
+                            <div class="progress details__container__stats__defense__progress">
+                                <div class="details__container__stats__defense__progress__bar" [style]="this.loadexp(this.pokemon?.stats[2].base_stat)">
+                                </div>
+                              </div>
+                            <h3 class="details__container__stats__defense" style="width: 155px">{{this.pokemon?.stats[2].base_stat}} pt</h3>
+                        </div>
+                        
+
+                        <div class="details__container__stats__satk d-flex flex-row align-items-center">
+                            <h3 class="details__container__stats__satk" style="width: 185px">Spl-Atk: </h3>
+                            <div class="progress details__container__stats__satk__progress">
+                                <div class="details__container__stats__satk__progress__bar" [style]="this.loadexp(this.pokemon?.stats[3].base_stat)">
+                                </div>
+                              </div>
+                            <h3 class="details__container__stats__satk" style="width: 155px">{{this.pokemon?.stats[3].base_stat}} pt</h3>
+                        </div>
+
+                        <div class="details__container__stats__sdef d-flex flex-row align-items-center">
+                            <h3 class="details__container__stats__sdef" style="width: 185px">Spl-Def: </h3>
+                            <div class="progress details__container__stats__sdef__progress">
+                                <div class="details__container__stats__sdef__progress__bar" [style]="this.loadexp(this.pokemon?.stats[4].base_stat)">
+                                </div>
+                              </div>
+                            <h3 class="details__container__stats__sdef" style="width: 155px">{{this.pokemon?.stats[4].base_stat}} pt</h3>
+                        </div>
+
+                        <div class="details__container__stats__speed d-flex flex-row align-items-center">
+                            <h3 class="details__container__stats__speed" style="width: 185px">Speed: </h3>
+                            <div class="progress details__container__stats__speed__progress">
+                                <div class="details__container__stats__speed__progress__bar" [style]="this.loadexp(this.pokemon?.stats[5].base_stat)">
+                                </div>
+                              </div>
+                            <h3 class="details__container__stats__speed" style="width: 155px">{{this.pokemon?.stats[5].base_stat}} pt</h3>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="moves">
+    <div class="moves__container row d-flex justify-content-between">
+        <h1 class="moves__heading text-center"><u>Moves</u></h1>
+        <div class="col d-flex justify-content-around" *ngFor="let moves of this.pokemon?.moves">
+            <button class="moves__button btn btn-primary">{{moves.move.name | capitalize}}</button>
+        </div>
+    </div>
+</div>

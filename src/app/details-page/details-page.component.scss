@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&display=swap');
+
+
+.details {
+    color: antiquewhite;
+    font-family: 'Nunito Sans', sans-serif;
+
+    &__nav {
+        width: 100%;
+        height: auto;
+        background-color: #FFCC00;
+
+        &__logo {
+            margin: 5px;
+            height: 49px;
+            width: auto;
+        }
+
+        &__logo:hover {
+            box-shadow: 0 0 11px rgba(33,33,33,.2); 
+          }
+    }
+
+    &__container {
+
+        &__stats{
+            background-color: transparent;
+            border-width: 3px;
+            border-color: #FFCC00;
+            border-radius: 10px;
+            padding: 0px;
+
+            &__base{
+                text-align: center;
+                margin: 4px;
+                color: #d6d6d6;
+
+                &__progress{
+                    background-color: #d6d6d6;
+                    width: 100%;
+                    height: 30px;
+
+                    &__bar{
+                        background-color: #929292;
+                    }
+                }
+            }
+
+            &__health{
+                text-align: center;
+                margin: 4px;
+                color: #a0ffa3;
+
+                &__progress{
+                    background-color: #a0ffa3;
+                    width: 100%;
+                    height: 30px;
+
+                    &__bar{
+                        background-color: #4CAF50;
+                    }
+                }
+            }
+
+            &__attack{
+                text-align: center;
+                margin: 4px;
+                color: #ff7c7c;
+
+                &__progress{
+                    width: 100%;
+                    height: 30px;
+                    background-color: #ff7c7c;
+
+                    &__bar{
+                        background-color: #D32F2F;
+                    }
+                }
+            }
+
+            &__sdef{
+                text-align: center;
+                margin: 4px;
+                color: #8cdeff;
+
+                &__progress{
+                    background-color: #8cdeff;;
+                    width: 100%;
+                    height: 30px;
+
+                    &__bar{
+                        background-color: #00b5fd;
+                    }
+                }
+            }
+
+            &__satk{
+                text-align: center;
+                margin: 4px;
+                color: #ff9900;
+
+                &__progress{
+                    background-color: #fff2a5;
+                    width: 100%;
+                    height: 30px;
+
+                    &__bar{
+                        background-color: #FF9800;
+                    }
+                }
+            }
+
+            &__defense{
+                text-align: center;
+                margin: 4px;
+                color: #c69eff;
+
+                &__progress{
+                    background-color: #c69eff;
+                    width: 100%;
+                    height: 30px;
+
+                    &__bar{
+                        background-color: #9e59ff;
+                    }
+                }
+            }
+
+            &__speed{
+                text-align: center;
+                margin: 4px;
+                color: #ff80bb;
+
+                &__progress{
+                    background-color: #ff80bb;
+                    width: 100%;
+                    height: 30px;
+
+                    &__bar{
+                        background-color: #ff3e98;
+                    }
+                }
+            }
+        }
+
+        &__image {
+            margin: 12px;
+            height: 340px;
+            width: auto;
+        }
+
+        &__header {
+            margin: 20px;
+            font-size: 45pt;
+        }
+
+        &__button {
+
+            min-width: 120px;
+            margin: 5px;
+            border-color: black;
+            background-color: #ac8202;
+            box-shadow: 0px 0px 6px 2px #ac82025f;
+            border-radius: 50px;
+
+            &__normal {
+                background-color: #B8B8B8;
+                box-shadow: 0px 0px 6px 2px #B8B8B85f;
+                color: black;
+            }
+
+            &__fighting {
+                background-color: #FF4D4D;
+                box-shadow: 0px 0px 6px 2px #FF4D4D5f;
+            }
+
+            &__flying {
+                background-color: #AEEEEE;
+                box-shadow: 0px 0px 6px 2px #AEEEEE5f;
+                color: black;
+            }
+
+            &__poison {
+                background-color: #8A2BE2;
+                box-shadow: 0px 0px 6px 2px #8A2BE25f;
+            }
+
+            &__ground {
+                background-color: #D2B48C;
+                box-shadow: 0px 0px 6px 2px #D2B48C5f;
+                color: black;
+            }
+
+            &__rock {
+                background-color: #B8860B;
+                box-shadow: 0px 0px 6px 2px #B8860B5f;
+            }
+
+            &__bug {
+                color: black;
+                background-color: #7FFF00;
+                box-shadow: 0px 0px 6px 2px #7FFF005f;
+            }
+
+            &__ghost {
+                background-color: #6A5ACD;
+                box-shadow: 0px 0px 6px 2px #6A5ACD5f;
+            }
+
+            &__steel {
+                background-color: #C0C0C0;
+                box-shadow: 0px 0px 6px 2px #C0C0C05f;
+                color: black;
+            }
+
+            &__fire {
+                background-color: #FF4500;
+                box-shadow: 0px 0px 6px 2px #FF45005f;
+            }
+
+            &__water {
+                background-color: #1E90FF;
+                box-shadow: 0px 0px 6px 2px #1E90FF5f;
+            }
+
+            &__grass {
+                background-color: #32CD32;
+                box-shadow: 0px 0px 6px 2px #32CD325f;
+                color: black;
+            }
+
+            &__electric {
+                background-color: #FFD700;
+                box-shadow: 0px 0px 6px 2px #FFD7005f;
+                color: black;
+            }
+
+            &__psychic {
+                background-color: #FF69B4;
+                box-shadow: 0px 0px 6px 2px #FF69B45f;
+            }
+
+            &__ice {
+                background-color: #00FFFF;
+                box-shadow: 0px 0px 6px 2px #00FFFF5f;
+                color: black;
+            }
+
+            &__dragon {
+                background-color: #FF8C00;
+                box-shadow: 0px 0px 6px 2px #FF8C005f;
+            }
+
+            &__dark {
+                background-color: #2E2E2E;
+                box-shadow: 0px 0px 6px 2px #2E2E2E5f;
+            }
+
+            &__fairy {
+                background-color: #FFB6C1;
+                box-shadow: 0px 0px 6px 2px #FFB6C15f;
+                color: black;
+            }
+
+            &__unknown {
+                background-color: #FFFFFF;
+                box-shadow: 0px 0px 6px 2px #FFFFFF5f;
+                color: black;
+            }
+
+            &__shadow {
+                background-color: #333333;
+                box-shadow: 0px 0px 6px 2px #3333335f;
+            }
+
+
+        }
+    }
+
+}
+
+.row {
+    width: 100%;
+    margin: 0px;
+}
+
+hr {
+    border-width: 3px;
+    border-radius: 1px;
+    border-color: white;
+}
+
+.moves{
+    width: 100%;
+    height: auto;
+
+    &__heading{
+        margin-top: 10px;
+        color: antiquewhite;
+    }
+
+    &__container{
+        margin: 10px;
+        border-radius: 10px;
+        width: auto;
+        height: 300px;
+        overflow-y: scroll;
+        border:3px solid #FFCC00;
+
+    }
+
+    &__button{
+        width: 150px;
+        height: fit-content;
+        margin: 10px;
+        border-radius: 10px;
+        border-color: black;
+    background-color: rgb(221, 110, 0);
+
+    }
+}

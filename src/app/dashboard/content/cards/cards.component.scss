@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&display=swap');
+
+.card{
+    padding: 10px;
+font-family: 'Nunito Sans', sans-serif;
+background-color: #0A285F;
+color: antiquewhite;
+border-color: #FFCC00;
+border-radius: 20px;
+
+    &__img{
+        height: auto;
+        width: 150px;
+    }
+
+    &__type{
+
+        &__button{
+            width: 120px;
+            margin: 5px;
+            border-color: black;
+            border-radius: 50px;
+
+            &__normal {
+                background-color: #B8B8B8;
+                box-shadow: 0px 0px 6px 2px #B8B8B85f;
+                color: black;
+              }
+              
+              &__fighting {
+                background-color: #FF4D4D;
+                box-shadow: 0px 0px 6px 2px #FF4D4D5f;
+              }
+              
+              &__flying {
+                background-color: #AEEEEE;
+                box-shadow: 0px 0px 6px 2px #AEEEEE5f;
+                color: black;
+              }
+              
+              &__poison {
+                background-color: #8A2BE2;
+                box-shadow: 0px 0px 6px 2px #8A2BE25f;
+              }
+              
+              &__ground {
+                background-color: #D2B48C;
+                box-shadow: 0px 0px 6px 2px #D2B48C5f;
+                color: black;
+              }
+              
+              &__rock {
+                background-color: #B8860B;
+                box-shadow: 0px 0px 6px 2px #B8860B5f;
+              }
+              
+              &__bug {
+                color: black;
+                background-color: #7FFF00;
+                box-shadow: 0px 0px 6px 2px #7FFF005f;
+              }
+              
+              &__ghost {
+                background-color: #6A5ACD;
+                box-shadow: 0px 0px 6px 2px #6A5ACD5f;
+              }
+              
+              &__steel {
+                background-color: #C0C0C0;
+                box-shadow: 0px 0px 6px 2px #C0C0C05f;
+                color: black;
+              }
+              
+              &__fire {
+                background-color: #FF4500;
+                box-shadow: 0px 0px 6px 2px #FF45005f;
+              }
+              
+              &__water {
+                background-color: #1E90FF;
+                box-shadow: 0px 0px 6px 2px #1E90FF5f;
+              }
+              
+              &__grass {
+                background-color: #32CD32;
+                box-shadow: 0px 0px 6px 2px #32CD325f;
+                color: black;
+              }
+              
+              &__electric {
+                background-color: #FFD700;
+                box-shadow: 0px 0px 6px 2px #FFD7005f;
+                color: black;
+              }
+              
+              &__psychic {
+                background-color: #FF69B4;
+                box-shadow: 0px 0px 6px 2px #FF69B45f;
+              }
+              
+              &__ice {
+                background-color: #00FFFF;
+                box-shadow: 0px 0px 6px 2px #00FFFF5f;
+                color: black;
+              }
+              
+              &__dragon {
+                background-color: #FF8C00;
+                box-shadow: 0px 0px 6px 2px #FF8C005f;
+              }
+              
+              &__dark {
+                background-color: #2E2E2E;
+                box-shadow: 0px 0px 6px 2px #2E2E2E5f;
+              }
+              
+              &__fairy {
+                background-color: #FFB6C1;
+                box-shadow: 0px 0px 6px 2px #FFB6C15f;
+                color: black;
+              }
+              
+              &__unknown {
+                background-color: #FFFFFF;
+                box-shadow: 0px 0px 6px 2px #FFFFFF5f;
+                color: black;
+              }
+              
+              &__shadow {
+                background-color: #333333;
+                box-shadow: 0px 0px 6px 2px #3333335f;
+              }
+
+
+        }
+    }
+
+    &__exp{
+        margin-bottom: 20px;
+        width: 250px;
+    }
+
+
+}
+
+.progress-bar{
+    background-color: green;
+}
+
+.progress{
+    background-color: #FFCC00;
+}
+
+.card:hover{
+    background-color: #FFCC008e;
+    border-color: antiquewhite;
+}
