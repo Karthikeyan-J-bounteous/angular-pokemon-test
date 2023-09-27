@@ -11,7 +11,8 @@ export class DashboardComponent{
   @ViewChild(ContentComponent) childComponent: ContentComponent;
 
 
+  //  event receptor when triggered from child (navbar)
   updateComponent(value: [String, String]) {
-    this.childComponent.childFunction(value);
+    this.childComponent.childFunction(value);  // passing the value to child (component)
   }
 }

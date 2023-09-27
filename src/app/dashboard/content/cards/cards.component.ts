@@ -13,34 +13,38 @@ import { Router } from '@angular/router';
 })
 export class CardsComponent {
 
-  @Input() name: string;
-  exp !: string;
-  findPokemon$: Observable<Pokedex>;
+  @Input() name: string;  // getting name of pokemon assigned from parent (content)
+  exp !: string;  // To store the exp of pokemon
+  findPokemon$: Observable<Pokedex>;  // observeable to make api call and store pokemon in ngStore
   pokemon: Pokedex = null;
 
   constructor(private store: Store, private router: Router) {
-   }
+  }
 
-   ngOnInit(): void {
-    this.findPokemon$ = this.store.select(selectPokemonbyName(this.name));
+  ngOnInit(): void {
+    this.findPokemon$ = this.store.select(selectPokemonbyName(this.name));  // making an api call with pokemon to store the detail of a pokemon with detail in ngStore
+
+    // Getting the pokemon detail data from store
     this.findPokemon$.subscribe((data) => {
-    if(data){
-      this.pokemon = data;
-      this.loadExp();
-    }
-});
-}
+      if (data) {
+        this.pokemon = data;
+        this.loadExp();  // helper function to provide exp bar
+      }
+    });
+  }
+  // helper function to provide exp bar
+  loadExp(): void {
+    this.exp = 'width:' + this.pokemon?.base_experience / 8 + '%';
+  }
 
-loadExp(){
-  this.exp = 'width:' + this.pokemon?.base_experience/8 + '%';
-}
-loadClass(type: string){
-  return ("card__type__button__" + type)
-}
+  // helper function to provide class for type accordian
+  loadClass(type: string): string {
+    return ("card__type__button__" + type)
+  }
 
-onClickCard(name : string){
-  this.router.navigate(['/content'], { queryParams: { name: name }, queryParamsHandling: 'merge' });
-
-}
-
+  // function triggered when card is clicked
+  onClickCard(name: string): void {
+    //naviagte to content page
+    this.router.navigate(['/content'], { queryParams: { name: name }, queryParamsHandling: 'merge' });
+  }
 }
